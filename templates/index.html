@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fault Reporter</title>
+</head>
+<body>
+    <h1>Reported Faults</h1>
+    {% if faults %}
+        <ul>
+        {% for fault in faults %}
+            <li>
+                <strong>{{ fault['title'] }}</strong> – {{ fault['status'] }}<br>
+                {{ fault['description'] }}<br>
+                Location: {{ fault['location'] }}<br>
+                Submitted by: {{ fault['submitted_by_name'] }}<br>
+    		{% if fault['resolved_by_name'] %}
+        		Resolved by: {{ fault['resolved_by_name'] }}<br>
+    		{% endif %}
+    		Submitted on: {{ fault['date_created'] }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No faults reported yet.</p>
+    {% endif %}
+</body>
+</html>

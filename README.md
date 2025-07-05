@@ -99,6 +99,19 @@ Key screenshots are located in the `/screenshots/` folder, including:
 - **Admin view showing delete buttons and “Add New User” button** – `04_admin_buttons.png`
 - **Modal for adding a user** – `05_add_user_modal.png`
 
+## Testing
+
+Basic route-level tests are included in `tests/test_routes.py`, using `pytest`.
+
+To run the tests:
+
+```bash
+pip install -r requirements.txt
+pytest
+```
+
+These tests verify that key routes behave correctly (e.g. homepage redirects unauthenticated users, login page loads as expected).
+
 ## Notes
 
 This application was created for a Level 5 Software Engineering and Agile module. It demonstrates:

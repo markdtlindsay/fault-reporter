@@ -5,6 +5,9 @@ venv/
 __pycache__/
 *.pyc
 
+# Pytest cache
+.pytest_cache/
+
 # Environment variables and config
 .env
 

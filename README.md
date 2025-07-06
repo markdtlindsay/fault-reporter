@@ -112,6 +112,17 @@ pytest
 
 These tests verify that key routes behave correctly (e.g. homepage redirects unauthenticated users, login page loads as expected).
 
+## Deployment
+
+This application is deployed online via [Render](https://render.com) using the free tier:
+
+**Live App**: [https://fault-reporter.onrender.com](https://fault-reporter.onrender.com)
+
+**Note**:  
+Render’s free plan automatically suspends the application after 15 minutes of inactivity.  
+The first request may take 30–60 seconds to load while the service "wakes up."  
+Please be patient, the app will load shortly.
+
 ## Notes
 
 This application was created for a Level 5 Software Engineering and Agile module. It demonstrates:

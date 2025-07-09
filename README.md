@@ -48,13 +48,27 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4. Create the database
+## Database Setup
 
-If `app.db` is not provided or you want to rebuild it, run:
+The application can create the SQLite database (`app.db`) automatically on first run using the `schema.sql` file and preloaded data.
 
-```bash
-sqlite3 app.db < schema.sql
-```
+Alternatively, a prebuilt `app.db` file is included in the repository for convenience.
+
+### Option 1: Auto-create on first run (recommended)
+
+If `app.db` does not exist, the application will:
+- Execute `schema.sql` to define the database structure
+- Insert 10 users and 10 fault records
+
+This requires no manual action — the app will be ready to use once started.
+
+### Option 2: Use the prebuilt `app.db`
+
+The repository includes a working database with test data. You can run the app immediately without triggering auto-creation.
+
+To reset or recreate the database manually:
+1. Delete the existing `app.db`
+2. Run the app and it will rebuild using `schema.sql` (Option 1)
 
 ### 5. Run the application
 
@@ -66,12 +80,20 @@ Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
 ## Project Structure
 
-- `app.py`: Main application logic
+### Folders
+
+- `diagrams/`: Entity Relationship Diagram
+- `screenshots/`: Annotated screenshots of the application
 - `templates/`: Jinja2 HTML templates
-- `static/`: CSS and static files
-- `schema.sql`: SQL commands to create tables
-- `screenshots/`: Annotated screenshots for demonstration
-- `diagrams/FaultReporterERD.png`: Entity Relationship Diagram
+- `tests/`: Basic automated tests using `pytest`
+
+### Files
+
+- `.gitignore`: Specifies intentionally untracked files (e.g., `venv/`, `app.db`)
+- `app.py`: Main Flask application logic
+- `Procfile`: Specifies start command for deployment on Render
+- `requirements.txt`: Lists required Python packages
+- `schema.sql`: SQL script to initialise the database
 
 ## ERD
 

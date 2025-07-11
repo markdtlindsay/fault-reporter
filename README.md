@@ -50,25 +50,25 @@ pip install -r requirements.txt
 
 ## Database Setup
 
-The application can create the SQLite database (`app.db`) automatically on first run using the `schema.sql` file and preloaded data.
+The application creates the SQLite database (`app.db`) automatically on first run using the `schema.sql` file and inserts 10 test users and 10 fault records.
 
-Alternatively, a prebuilt `app.db` file is included in the repository for convenience.
+No manual setup is required.
 
 ### Option 1: Auto-create on first run (recommended)
 
 If `app.db` does not exist, the application will:
 - Execute `schema.sql` to define the database structure
-- Insert 10 users and 10 fault records
+- Populate it with realistic test data
 
-This requires no manual action — the app will be ready to use once started.
+This happens automatically when the app is first accessed.
 
 ### Option 2: Use the prebuilt `app.db`
 
-The repository includes a working database with test data. You can run the app immediately without triggering auto-creation.
+If preferred, you may use the included `app.db` file, which contains the same test data as the auto-generated version.
 
-To reset or recreate the database manually:
-1. Delete the existing `app.db`
-2. Run the app and it will rebuild using `schema.sql` (Option 1)
+To recreate the database manually:
+1. Delete `app.db`
+2. Run the application, and it will regenerate automatically
 
 ### 5. Run the application
 
@@ -90,6 +90,7 @@ Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 ### Files
 
 - `.gitignore`: Specifies intentionally untracked files (e.g., `venv/`, `app.db`)
+- `app.db`: Working database with test data
 - `app.py`: Main Flask application logic
 - `Procfile`: Specifies start command for deployment on Render
 - `requirements.txt`: Lists required Python packages
